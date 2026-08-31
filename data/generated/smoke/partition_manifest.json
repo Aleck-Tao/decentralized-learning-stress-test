@@ -1,0 +1,399 @@
+{
+  "partition_count": 5,
+  "partitions": [
+    {
+      "benchmark_seed": 101,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 4,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 15,
+            "1": 17
+          },
+          "holdout_rows": 32,
+          "holdout_source_ids_sha256": "1550646e2e0f90070953633c9dd0235a5051c2f3f38fac37917ddacc16dee931",
+          "peer_id": 0,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 61,
+            "1": 68
+          },
+          "train_rows": 129,
+          "train_source_ids_sha256": "8f2f547ea4dbc8bba74997481354707599d1a3da56560013b97e7ec89e38bf0f"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 14,
+            "1": 18
+          },
+          "holdout_rows": 32,
+          "holdout_source_ids_sha256": "8cf78a9c4e246050cdcb96a46a50de6dedbaa4048d768488e825bf4649a450e1",
+          "peer_id": 1,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 62,
+            "1": 67
+          },
+          "train_rows": 129,
+          "train_source_ids_sha256": "4c89c5e239887d9d9474dec920c710888d326f03ea238512b89b54f1cb2aaad9"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 16,
+            "1": 16
+          },
+          "holdout_rows": 32,
+          "holdout_source_ids_sha256": "7e7556a37a0298014d3ecc53816effac64569e93b56e6baf9d8ebfc77164c122",
+          "peer_id": 2,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 59,
+            "1": 68
+          },
+          "train_rows": 127,
+          "train_source_ids_sha256": "de82af5aa45b57a3753414250859c287e175f2ac446c66353ea0b260ed324e60"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 15,
+            "1": 17
+          },
+          "holdout_rows": 32,
+          "holdout_source_ids_sha256": "fca87d0c6f0dafb83ad61bd9767f3037ba99ed30cd393d0bca1b55af1c665068",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 60,
+            "1": 67
+          },
+          "train_rows": 127,
+          "train_source_ids_sha256": "9013efe1882aa009585df9b762d170fd4e33f1b244196b75c75496ad4695d98d"
+        }
+      ],
+      "dirichlet_alpha": null,
+      "mode": "iid",
+      "scarce_peer_ids": [],
+      "scarcity_fraction": 1.0,
+      "scenario": "iid_real",
+      "seed": 101
+    },
+    {
+      "benchmark_seed": 101,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 4,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 10,
+            "1": 5
+          },
+          "holdout_rows": 15,
+          "holdout_source_ids_sha256": "dcb5688d8b7f346d4dd5e96ec69bbe99a3649c7cf9b5d04aef24353a9eae9ac7",
+          "peer_id": 0,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 13,
+            "1": 16
+          },
+          "train_rows": 29,
+          "train_source_ids_sha256": "87bd8eafec399dc057dccb6d6ab3da416f9cf28b16722099bdd21ed0efb68aee"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 60
+          },
+          "holdout_rows": 60,
+          "holdout_source_ids_sha256": "cab802bab032155a4c170660e10545df0e28e63f9cbc3a05dc184c8df5c2fe9a",
+          "peer_id": 1,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 241
+          },
+          "train_rows": 241,
+          "train_source_ids_sha256": "259f2b2883a033bd110936f84baf1da60182b31e844ae299359159b386762f1f"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 33,
+            "1": 0
+          },
+          "holdout_rows": 33,
+          "holdout_source_ids_sha256": "a4a78516845866a5b04c9cdbae69edadfb9361dfe1b64c637f54e5e57ba9c015",
+          "peer_id": 2,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 133,
+            "1": 0
+          },
+          "train_rows": 133,
+          "train_source_ids_sha256": "0812c2415268d6169c4b6d61c3ca8d1998a2e71bdfb0a70020e8d72438615b0c"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 19,
+            "1": 1
+          },
+          "holdout_rows": 20,
+          "holdout_source_ids_sha256": "10366a3eb10d161da4ffce68a667e1391aba5a3c044518e6ddbf40e2aaeabb48",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 79,
+            "1": 1
+          },
+          "train_rows": 80,
+          "train_source_ids_sha256": "55ed29a5b1ac8dd510bdf4a343db1d4baee367db9c480096c4eea20edfc5ccd0"
+        }
+      ],
+      "dirichlet_alpha": 0.4,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        0
+      ],
+      "scarcity_fraction": 0.5,
+      "scenario": "noniid_scarce_real",
+      "seed": 101
+    },
+    {
+      "benchmark_seed": 101,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 4,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 10,
+            "1": 5
+          },
+          "holdout_rows": 15,
+          "holdout_source_ids_sha256": "dcb5688d8b7f346d4dd5e96ec69bbe99a3649c7cf9b5d04aef24353a9eae9ac7",
+          "peer_id": 0,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 13,
+            "1": 16
+          },
+          "train_rows": 29,
+          "train_source_ids_sha256": "87bd8eafec399dc057dccb6d6ab3da416f9cf28b16722099bdd21ed0efb68aee"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 60
+          },
+          "holdout_rows": 60,
+          "holdout_source_ids_sha256": "cab802bab032155a4c170660e10545df0e28e63f9cbc3a05dc184c8df5c2fe9a",
+          "peer_id": 1,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 241
+          },
+          "train_rows": 241,
+          "train_source_ids_sha256": "259f2b2883a033bd110936f84baf1da60182b31e844ae299359159b386762f1f"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 33,
+            "1": 0
+          },
+          "holdout_rows": 33,
+          "holdout_source_ids_sha256": "a4a78516845866a5b04c9cdbae69edadfb9361dfe1b64c637f54e5e57ba9c015",
+          "peer_id": 2,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 133,
+            "1": 0
+          },
+          "train_rows": 133,
+          "train_source_ids_sha256": "0812c2415268d6169c4b6d61c3ca8d1998a2e71bdfb0a70020e8d72438615b0c"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 19,
+            "1": 1
+          },
+          "holdout_rows": 20,
+          "holdout_source_ids_sha256": "10366a3eb10d161da4ffce68a667e1391aba5a3c044518e6ddbf40e2aaeabb48",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 79,
+            "1": 1
+          },
+          "train_rows": 80,
+          "train_source_ids_sha256": "55ed29a5b1ac8dd510bdf4a343db1d4baee367db9c480096c4eea20edfc5ccd0"
+        }
+      ],
+      "dirichlet_alpha": 0.4,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        0
+      ],
+      "scarcity_fraction": 0.5,
+      "scenario": "noniid_scarce_synthetic",
+      "seed": 101
+    },
+    {
+      "benchmark_seed": 101,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 4,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 10,
+            "1": 5
+          },
+          "holdout_rows": 15,
+          "holdout_source_ids_sha256": "dcb5688d8b7f346d4dd5e96ec69bbe99a3649c7cf9b5d04aef24353a9eae9ac7",
+          "peer_id": 0,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 13,
+            "1": 16
+          },
+          "train_rows": 29,
+          "train_source_ids_sha256": "87bd8eafec399dc057dccb6d6ab3da416f9cf28b16722099bdd21ed0efb68aee"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 60
+          },
+          "holdout_rows": 60,
+          "holdout_source_ids_sha256": "cab802bab032155a4c170660e10545df0e28e63f9cbc3a05dc184c8df5c2fe9a",
+          "peer_id": 1,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 241
+          },
+          "train_rows": 241,
+          "train_source_ids_sha256": "259f2b2883a033bd110936f84baf1da60182b31e844ae299359159b386762f1f"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 33,
+            "1": 0
+          },
+          "holdout_rows": 33,
+          "holdout_source_ids_sha256": "a4a78516845866a5b04c9cdbae69edadfb9361dfe1b64c637f54e5e57ba9c015",
+          "peer_id": 2,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 133,
+            "1": 0
+          },
+          "train_rows": 133,
+          "train_source_ids_sha256": "0812c2415268d6169c4b6d61c3ca8d1998a2e71bdfb0a70020e8d72438615b0c"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 19,
+            "1": 1
+          },
+          "holdout_rows": 20,
+          "holdout_source_ids_sha256": "10366a3eb10d161da4ffce68a667e1391aba5a3c044518e6ddbf40e2aaeabb48",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 79,
+            "1": 1
+          },
+          "train_rows": 80,
+          "train_source_ids_sha256": "55ed29a5b1ac8dd510bdf4a343db1d4baee367db9c480096c4eea20edfc5ccd0"
+        }
+      ],
+      "dirichlet_alpha": 0.4,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        0
+      ],
+      "scarcity_fraction": 0.5,
+      "scenario": "noniid_sign_flip",
+      "seed": 101
+    },
+    {
+      "benchmark_seed": 101,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 4,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 10,
+            "1": 5
+          },
+          "holdout_rows": 15,
+          "holdout_source_ids_sha256": "dcb5688d8b7f346d4dd5e96ec69bbe99a3649c7cf9b5d04aef24353a9eae9ac7",
+          "peer_id": 0,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 13,
+            "1": 16
+          },
+          "train_rows": 29,
+          "train_source_ids_sha256": "87bd8eafec399dc057dccb6d6ab3da416f9cf28b16722099bdd21ed0efb68aee"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 60
+          },
+          "holdout_rows": 60,
+          "holdout_source_ids_sha256": "cab802bab032155a4c170660e10545df0e28e63f9cbc3a05dc184c8df5c2fe9a",
+          "peer_id": 1,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 241
+          },
+          "train_rows": 241,
+          "train_source_ids_sha256": "259f2b2883a033bd110936f84baf1da60182b31e844ae299359159b386762f1f"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 33,
+            "1": 0
+          },
+          "holdout_rows": 33,
+          "holdout_source_ids_sha256": "a4a78516845866a5b04c9cdbae69edadfb9361dfe1b64c637f54e5e57ba9c015",
+          "peer_id": 2,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 133,
+            "1": 0
+          },
+          "train_rows": 133,
+          "train_source_ids_sha256": "0812c2415268d6169c4b6d61c3ca8d1998a2e71bdfb0a70020e8d72438615b0c"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 19,
+            "1": 1
+          },
+          "holdout_rows": 20,
+          "holdout_source_ids_sha256": "10366a3eb10d161da4ffce68a667e1391aba5a3c044518e6ddbf40e2aaeabb48",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 79,
+            "1": 1
+          },
+          "train_rows": 80,
+          "train_source_ids_sha256": "55ed29a5b1ac8dd510bdf4a343db1d4baee367db9c480096c4eea20edfc5ccd0"
+        }
+      ],
+      "dirichlet_alpha": 0.4,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        0
+      ],
+      "scarcity_fraction": 0.5,
+      "scenario": "noniid_synthetic_poison",
+      "seed": 101
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,196 @@
+{
+  "partition_count": 2,
+  "partitions": [
+    {
+      "benchmark_seed": 211,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 5,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 5
+          },
+          "holdout_rows": 5,
+          "holdout_source_ids_sha256": "75229e749e9f6c37c8d137084570f97fd978b41aa80b7ee8a90133ed0d360e18",
+          "peer_id": 0,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 22
+          },
+          "train_rows": 22,
+          "train_source_ids_sha256": "20be123efaa2531852a9ace877b4f00c116efdb283c7c69da5bf6418bef461ed"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 17
+          },
+          "holdout_rows": 17,
+          "holdout_source_ids_sha256": "ae5e4c06502afff55f358b44094eef0d5748bb52964917bf739c99f73d86ffae",
+          "peer_id": 1,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 68
+          },
+          "train_rows": 68,
+          "train_source_ids_sha256": "9e1b0edb5727e84c25c8128483b5bfe9f1135335d48d1f37763db1ae173be761"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 58,
+            "1": 0
+          },
+          "holdout_rows": 58,
+          "holdout_source_ids_sha256": "3946c34894c667361d16d62043b1e7b4c24e36a396298cbbb012715acc2f9333",
+          "peer_id": 2,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 112,
+            "1": 4
+          },
+          "train_rows": 116,
+          "train_source_ids_sha256": "9f423d9c796bb323c4a19cf8033621adbcc45e84b22b05ead801cb885b760001"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 5,
+            "1": 28
+          },
+          "holdout_rows": 33,
+          "holdout_source_ids_sha256": "3c0f7968902d1d184f8f88a9e2c2448fd4708f573b9a324b42b785f7cc4ec43a",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 18,
+            "1": 116
+          },
+          "train_rows": 134,
+          "train_source_ids_sha256": "9db0389a01a33da7456b5bba5ad8ae36a5d7a429c597eb997bdc1091f913a4d1"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 14
+          },
+          "holdout_rows": 14,
+          "holdout_source_ids_sha256": "288e347ad75207d4bfb762133fcae1b5e42dbb2c13f42b521c9e97ffde112dca",
+          "peer_id": 4,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 57
+          },
+          "train_rows": 57,
+          "train_source_ids_sha256": "5134ae6878821c0ada223478fc83ef09bd6dc0208243fd25639247c73d73513c"
+        }
+      ],
+      "dirichlet_alpha": 0.4,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        2
+      ],
+      "scarcity_fraction": 0.5,
+      "scenario": "noniid_scarce_synthetic",
+      "seed": 211
+    },
+    {
+      "benchmark_seed": 211,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 5,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 5
+          },
+          "holdout_rows": 5,
+          "holdout_source_ids_sha256": "75229e749e9f6c37c8d137084570f97fd978b41aa80b7ee8a90133ed0d360e18",
+          "peer_id": 0,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 22
+          },
+          "train_rows": 22,
+          "train_source_ids_sha256": "20be123efaa2531852a9ace877b4f00c116efdb283c7c69da5bf6418bef461ed"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 17
+          },
+          "holdout_rows": 17,
+          "holdout_source_ids_sha256": "ae5e4c06502afff55f358b44094eef0d5748bb52964917bf739c99f73d86ffae",
+          "peer_id": 1,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 68
+          },
+          "train_rows": 68,
+          "train_source_ids_sha256": "9e1b0edb5727e84c25c8128483b5bfe9f1135335d48d1f37763db1ae173be761"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 58,
+            "1": 0
+          },
+          "holdout_rows": 58,
+          "holdout_source_ids_sha256": "3946c34894c667361d16d62043b1e7b4c24e36a396298cbbb012715acc2f9333",
+          "peer_id": 2,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 112,
+            "1": 4
+          },
+          "train_rows": 116,
+          "train_source_ids_sha256": "9f423d9c796bb323c4a19cf8033621adbcc45e84b22b05ead801cb885b760001"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 5,
+            "1": 28
+          },
+          "holdout_rows": 33,
+          "holdout_source_ids_sha256": "3c0f7968902d1d184f8f88a9e2c2448fd4708f573b9a324b42b785f7cc4ec43a",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 18,
+            "1": 116
+          },
+          "train_rows": 134,
+          "train_source_ids_sha256": "9db0389a01a33da7456b5bba5ad8ae36a5d7a429c597eb997bdc1091f913a4d1"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 14
+          },
+          "holdout_rows": 14,
+          "holdout_source_ids_sha256": "288e347ad75207d4bfb762133fcae1b5e42dbb2c13f42b521c9e97ffde112dca",
+          "peer_id": 4,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 57
+          },
+          "train_rows": 57,
+          "train_source_ids_sha256": "5134ae6878821c0ada223478fc83ef09bd6dc0208243fd25639247c73d73513c"
+        }
+      ],
+      "dirichlet_alpha": 0.4,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        2
+      ],
+      "scarcity_fraction": 0.5,
+      "scenario": "noniid_sign_flip",
+      "seed": 211
+    }
+  ],
+  "schema_version": "1.0"
+}

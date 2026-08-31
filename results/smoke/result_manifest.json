@@ -1,0 +1,32 @@
+{
+  "result_count": 5,
+  "result_directory": "results/smoke",
+  "results": [
+    {
+      "bytes": 5348,
+      "path": "results/smoke/benchmark_runs.csv",
+      "sha256": "ab7305af58676efe1ba76a2310fc6b4689eeb435c6f0601868ffdadd09ad4003"
+    },
+    {
+      "bytes": 9392,
+      "path": "results/smoke/benchmark_summary.json",
+      "sha256": "5e76ceb98dd8a5b8b303e9af26cf41f3921ef28af3a667bd42f8e9ebda32e823"
+    },
+    {
+      "bytes": 2095,
+      "path": "results/smoke/report.md",
+      "sha256": "c67cf965c0ce7f394788c0c0a5dfea0746c42e82f2c62fd1dccbfb26f2003d5f"
+    },
+    {
+      "bytes": 5209,
+      "path": "results/smoke/round_metrics.csv",
+      "sha256": "7fc0501598f94265a57c122979c9a5d08f208fb3731142b112467f5eb9e78a2b"
+    },
+    {
+      "bytes": 4369,
+      "path": "results/smoke/run_manifest.json",
+      "sha256": "48a23520bc261b1dffcda15fd4bed6337d3e789265253b9abcbc067a22dc00bd"
+    }
+  ],
+  "schema_version": "1.0"
+}

@@ -1,0 +1,8 @@
+{
+  "claim_boundary": "Unit/smoke fixture only; not UCI Adult and not public-administration data",
+  "generator": "decentralized_stress.data.make_fixture",
+  "kind": "generated_test_fixture",
+  "seed": 17,
+  "test_rows": 240,
+  "train_rows": 640
+}

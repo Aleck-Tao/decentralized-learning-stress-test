@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "dataset": "fixture",
+  "clients": 5,
+  "rounds": 3,
+  "local_epochs": 1,
+  "batch_size": 64,
+  "learning_rate": 0.04,
+  "hidden_dim": 12,
+  "partition_alpha": 0.4,
+  "scarcity_fraction": 0.5,
+  "scarce_client_fraction": 0.2,
+  "synthetic_ratio": 0.5,
+  "byzantine_fraction": 0.2,
+  "sign_flip_scale": 5.0,
+  "trim_count": 1,
+  "topology": "ring",
+  "seeds": [211],
+  "aggregators": ["peer_mean", "coordinate_median", "trimmed_mean"],
+  "scenarios": [
+    "noniid_scarce_synthetic",
+    "noniid_sign_flip"
+  ]
+}
+

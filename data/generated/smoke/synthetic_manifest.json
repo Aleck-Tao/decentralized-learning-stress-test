@@ -1,0 +1,47 @@
+{
+  "entries": [
+    {
+      "benchmark_seed": 101,
+      "generated_rows": 14,
+      "generator": "class-preserving local bootstrap with bounded numeric jitter",
+      "non_dp": true,
+      "parent_source_ids_sha256": "a6276428ad4f710e5ed0f65eabae0fda74688e6b55c9045cf9756396c8670d59",
+      "peer_id": 0,
+      "poisoned": false,
+      "privacy_claim": "none",
+      "ratio": 0.5,
+      "scenario": "noniid_scarce_synthetic",
+      "seed": 10100
+    },
+    {
+      "benchmark_seed": 101,
+      "generated_rows": 14,
+      "generator": "class-preserving local bootstrap with bounded numeric jitter",
+      "non_dp": true,
+      "parent_source_ids_sha256": "a6276428ad4f710e5ed0f65eabae0fda74688e6b55c9045cf9756396c8670d59",
+      "peer_id": 0,
+      "poisoned": false,
+      "privacy_claim": "none",
+      "ratio": 0.5,
+      "scenario": "noniid_sign_flip",
+      "seed": 10100
+    },
+    {
+      "benchmark_seed": 101,
+      "generated_rows": 14,
+      "generator": "class-preserving local bootstrap with bounded numeric jitter",
+      "non_dp": true,
+      "parent_source_ids_sha256": "a6276428ad4f710e5ed0f65eabae0fda74688e6b55c9045cf9756396c8670d59",
+      "peer_id": 0,
+      "poisoned": true,
+      "privacy_claim": "none",
+      "ratio": 0.5,
+      "scenario": "noniid_synthetic_poison",
+      "seed": 10100
+    }
+  ],
+  "entry_count": 3,
+  "generator_claim": "non-private local bootstrap with bounded numeric jitter",
+  "privacy_guarantee": "none",
+  "schema_version": "1.0"
+}

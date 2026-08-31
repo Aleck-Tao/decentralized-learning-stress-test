@@ -1,0 +1,19 @@
+{
+  "archive_bytes": 620237,
+  "archive_path": "data/raw/adult.zip",
+  "archive_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+  "dataset_id": "uci-adult-2",
+  "doi": "10.24432/C5XW20",
+  "kind": "external_real_dataset",
+  "license": "CC BY 4.0",
+  "member_sha256": {
+    "adult.data": "5b00264637dbfec36bdeaab5676b0b309ff9eb788d63554ca0a249491c86603d",
+    "adult.names": "c248284c0b5de30c9e1958d6cdd168a34a654758b620e68f46aefa83fc0a576a",
+    "adult.test": "a2a9044bc167a35b2361efbabec64e89d69ce82d9790d2980119aac5fd7e9c05"
+  },
+  "official_test_rows": 16281,
+  "preprocessing": "fixed numeric transforms plus per-field SHA-256 categorical hashing; sex held out for evaluation only",
+  "source_url": "https://archive.ics.uci.edu/static/public/2/adult.zip",
+  "title": "Adult (Census Income)",
+  "train_rows": 32561
+}

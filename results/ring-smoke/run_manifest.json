@@ -1,0 +1,124 @@
+{
+  "config_path": "configs/ring_smoke.json",
+  "config_sha256": "3e47d6eb73212383596b1788bbc945798cc4b89828010f027ec669a6810b97f5",
+  "dataset_source_manifest_path": "data/generated/ring-smoke/source_manifest.json",
+  "dataset_source_manifest_sha256": "b905b00223fd55facc05de3f66f4a93cabad8bab82fa5f85b1f034bf03ef847a",
+  "environment": {
+    "byteorder": "little",
+    "numpy": "2.5.2",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "python": "3.12.13",
+    "python_implementation": "CPython",
+    "torch": "2.5.1+cpu",
+    "torch_device": "cpu",
+    "torch_threads": 24
+  },
+  "partition_manifest_path": "data/generated/ring-smoke/partition_manifest.json",
+  "partition_manifest_sha256": "669475469233f2beffa642eeab7b18b2b302cf09bfd4ac448c1f6c335ee88795",
+  "schema_version": "1.0",
+  "source_files": [
+    {
+      "bytes": 582,
+      "path": "pyproject.toml",
+      "sha256": "13d82e8c131640636b16641f04c78ccc931125b8ed75246f9f80f184a6955128"
+    },
+    {
+      "bytes": 436,
+      "path": "data/source_lock.json",
+      "sha256": "72c01d07161b7db700e8b3827c0e2db0e361477354fb1735435b1cf3111011bd"
+    },
+    {
+      "bytes": 73,
+      "path": "src/decentralized_stress/__init__.py",
+      "sha256": "eca21b690b5f914161f98e8bd3c2573aba0fc03606c0bf5a6b4c9c4cd38895b3"
+    },
+    {
+      "bytes": 81,
+      "path": "src/decentralized_stress/__main__.py",
+      "sha256": "2cdd23d4f5cd6c3b3e4cb690ad16d560637767b9ca5b2a3cf129fcc0a5ebc82b"
+    },
+    {
+      "bytes": 1942,
+      "path": "src/decentralized_stress/aggregation.py",
+      "sha256": "f94fd8a925be3dbdf56d92b4334706d923e401f654b7c67daf57b7756b9b691e"
+    },
+    {
+      "bytes": 493,
+      "path": "src/decentralized_stress/attacks.py",
+      "sha256": "8203102ab86207f6438f8386a723cab5a4d722199f76af2796778b7d7c93efa0"
+    },
+    {
+      "bytes": 3319,
+      "path": "src/decentralized_stress/cli.py",
+      "sha256": "0cf3da62eb9f4d027bb17ff004e1be99f2dc1cfe01e215178a0ac11a8fb88388"
+    },
+    {
+      "bytes": 6441,
+      "path": "src/decentralized_stress/config.py",
+      "sha256": "2eb1af45f9ff569dc030a759f3acc92427ce78224ebe7bf43cf976ca97737da5"
+    },
+    {
+      "bytes": 18083,
+      "path": "src/decentralized_stress/data.py",
+      "sha256": "8dc52690020fad1ba4c9713fa18601f866801d1948b7790f80d3f00ef853d129"
+    },
+    {
+      "bytes": 4405,
+      "path": "src/decentralized_stress/evaluation.py",
+      "sha256": "3e0d405a807abf5135c92f308744d28c75c8ae8b9563dddc47f4c43ae85cae3b"
+    },
+    {
+      "bytes": 5363,
+      "path": "src/decentralized_stress/model.py",
+      "sha256": "f4bed10bf908867b653281b5ff806ecdaf80f1183df6f531108b98fa8cd56409"
+    },
+    {
+      "bytes": 14740,
+      "path": "src/decentralized_stress/pipeline.py",
+      "sha256": "3bf3ad45747736024523bc0b6c1c7ba98207ef982dc4a94d4a0f66fe16d991f2"
+    },
+    {
+      "bytes": 6979,
+      "path": "src/decentralized_stress/privacy.py",
+      "sha256": "c2c739a1a8cc2baf0ca1ebcaa7611dd05b084d1f0e79b3ce8bd1c5e3576faf69"
+    },
+    {
+      "bytes": 6679,
+      "path": "src/decentralized_stress/protocol.py",
+      "sha256": "8f34fce4916b14a21b76fd47fca37df4baa0ae6131b34bf56342f60b487f2448"
+    },
+    {
+      "bytes": 6281,
+      "path": "src/decentralized_stress/provenance.py",
+      "sha256": "485bc5152a36a92406e78257cc7c57278c371bbdce656a6d5b21a5f6213aabc2"
+    },
+    {
+      "bytes": 2989,
+      "path": "src/decentralized_stress/reporting.py",
+      "sha256": "4877efe18b61f1a8428cadba62fc04fc8b057d2c35cac61bd7a069780d921a4e"
+    },
+    {
+      "bytes": 675,
+      "path": "configs/benchmark.json",
+      "sha256": "fce57e793bf8a5bb5693df6e81db9498b1808597f06420e796c785a08617e27f"
+    },
+    {
+      "bytes": 544,
+      "path": "configs/ring_smoke.json",
+      "sha256": "3e47d6eb73212383596b1788bbc945798cc4b89828010f027ec669a6810b97f5"
+    },
+    {
+      "bytes": 625,
+      "path": "configs/smoke.json",
+      "sha256": "915e543e5acc3d98f694174a3b4c759386c46cf73d4bdf157214ba45c8d1e699"
+    },
+    {
+      "bytes": 466,
+      "path": "configs/test.json",
+      "sha256": "782ddbc050a9d762ccbe0495a91731043cec4c95a4bff0fe472259ae96352c59"
+    }
+  ],
+  "source_tree_sha256": "2d34e61c546f7d0baab4eaa01a5b91b59c156bff2c18ea47c80d0f448041e9d6",
+  "synthetic_manifest_path": "data/generated/ring-smoke/synthetic_manifest.json",
+  "synthetic_manifest_sha256": "ef62a8b1de495a12d502cd79c887f81ec2452dcdef661f80bba4d613c5a3629b"
+}

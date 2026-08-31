@@ -1,0 +1,32 @@
+{
+  "result_count": 5,
+  "result_directory": "results/ring-smoke",
+  "results": [
+    {
+      "bytes": 2552,
+      "path": "results/ring-smoke/benchmark_runs.csv",
+      "sha256": "10141f29d77d81675555c5c237d8fcb9efc6983288cc1c49af7565f8b7017d29"
+    },
+    {
+      "bytes": 4054,
+      "path": "results/ring-smoke/benchmark_summary.json",
+      "sha256": "08efb7fd6a8c53a2fb7b271d0852ddb2b74166b61b37b71d3d7d7a754573baa4"
+    },
+    {
+      "bytes": 1359,
+      "path": "results/ring-smoke/report.md",
+      "sha256": "4b8f65d5de0dc41153aeacc1fb3fef30ffcab7aa06e2bf595d31855665a2b597"
+    },
+    {
+      "bytes": 2284,
+      "path": "results/ring-smoke/round_metrics.csv",
+      "sha256": "9292a0f775da887d2c576e865f32a410695e331c3e3bdc9e76c9661882f8732e"
+    },
+    {
+      "bytes": 4389,
+      "path": "results/ring-smoke/run_manifest.json",
+      "sha256": "3b7c8c3718a46b509f0c902ddf3cbd436abfba9ab1a304610b7364583ca31e48"
+    }
+  ],
+  "schema_version": "1.0"
+}

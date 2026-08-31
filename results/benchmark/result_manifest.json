@@ -1,0 +1,32 @@
+{
+  "result_count": 5,
+  "result_directory": "results/benchmark",
+  "results": [
+    {
+      "bytes": 18067,
+      "path": "results/benchmark/benchmark_runs.csv",
+      "sha256": "2095c582f19932c834e21ce8c6538d682928b67ec0f81454f8588df3ea060a31"
+    },
+    {
+      "bytes": 11266,
+      "path": "results/benchmark/benchmark_summary.json",
+      "sha256": "2ed9cb77f4cf79e6e8d7fb8bc506ae9b5c5c2fbde61e8a14d078a36208aad01f"
+    },
+    {
+      "bytes": 2378,
+      "path": "results/benchmark/report.md",
+      "sha256": "3bd7f6d3f1d30d5560448cd4f386b4d3ad1601c20be45da839fd8c910566f3bc"
+    },
+    {
+      "bytes": 77464,
+      "path": "results/benchmark/round_metrics.csv",
+      "sha256": "bc5c80366101b3a0f30fd63eadd3532e713fa390fdbacf637961f6e2535151bd"
+    },
+    {
+      "bytes": 4385,
+      "path": "results/benchmark/run_manifest.json",
+      "sha256": "770d13dcee633c738ebe4f997e36d0e32bebc5ee53666d70abd28886034805d6"
+    }
+  ],
+  "schema_version": "1.0"
+}

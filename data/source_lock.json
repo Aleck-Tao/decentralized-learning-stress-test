@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "dataset_id": "uci-adult-2",
+  "title": "Adult (Census Income)",
+  "doi": "10.24432/C5XW20",
+  "source_url": "https://archive.ics.uci.edu/static/public/2/adult.zip",
+  "license": "CC BY 4.0",
+  "archive_path": "data/raw/adult.zip",
+  "archive_sha256": "7537312dd56c2b98035880805ce99e68183a30ee468aa5329d6df0fbb3cc21bb",
+  "required_members": [
+    "adult.data",
+    "adult.names",
+    "adult.test"
+  ]
+}
+

@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decentralized-learning-stress-test"
+version = "0.1.0"
+description = "CPU-reproducible peer-to-peer learning stress test under non-IID data and Byzantine updates"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Yuanyuan Tao"}]
+dependencies = [
+  "numpy>=1.26,<3",
+  "torch>=2.5,<2.6",
+]
+
+[project.scripts]
+dlstress = "decentralized_stress.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["decentralized_stress*"]
