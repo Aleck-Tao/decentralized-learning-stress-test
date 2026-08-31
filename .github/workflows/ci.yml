@@ -47,7 +47,7 @@ jobs:
       - run: python -m decentralized_stress benchmark --root . --output-dir results/ci-benchmark
       - run: python -m decentralized_stress verify --root . --result-dir results/ci-benchmark
       - name: Upload verified CPU benchmark
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: decentralized-learning-cpu-${{ github.sha }}
           path: results/ci-benchmark
