@@ -1,140 +1,55 @@
 # Decentralized Learning Stress Test
 
 [![CI](https://github.com/Aleck-Tao/decentralized-learning-stress-test/actions/workflows/ci.yml/badge.svg)](https://github.com/Aleck-Tao/decentralized-learning-stress-test/actions/workflows/ci.yml)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-3776AB.svg)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-A CPU-reproducible PyTorch benchmark for peer-to-peer learning across simulated data owners under non-IID scarcity, local synthetic augmentation, and Byzantine participants.
+How much clean-data performance is worth giving up for resistance to poisoned updates? This CPU PyTorch benchmark compares mean, coordinate-median, and trimmed-mean aggregation across eight simulated data owners using UCI Adult.
 
-The experiment asks one bounded question: when peers cannot pool rows, how do local mean, coordinate-median, and trimmed-mean aggregation behave under distribution shift and poisoned contributions, and what loss-based membership signal remains in the trained models?
+Each peer trains locally and exchanges model deltas. The main experiment uses synchronous all-to-all communication; a separate ring fixture exercises peers with different local views. The implementation, data splits, and measurements are available alongside the results.
 
-> **Evidence boundary:** this is a synchronous, single-process message-passing simulation over the public UCI Adult dataset. Client partitions are generated; they are not real organisations. The project does not provide network security, a Byzantine-tolerance theorem, differential privacy, legal compliance, or a public-sector deployment.
+## What the results show
 
-## What runs
+The [Adult benchmark](results/benchmark/report.md) covers six scenarios, three aggregators, and three seeds. The table below shows mean ensemble balanced accuracy; the clean synthetic mix is the reference for both attacks.
 
-```mermaid
-flowchart LR
-    A["Pinned UCI Adult archive"] --> B["Fixed preprocessing + strict splits"]
-    B --> C["8 simulated data-owning peers"]
-    C --> D["Local PyTorch training"]
-    D --> E["Peer messages: model deltas only"]
-    E --> F["Mean / coordinate median / trimmed mean"]
-    F --> G["Peer-local model updates"]
-    G --> H["Utility, robustness, subgroup, consensus, communication metrics"]
-    G --> I["Loss-based membership-inference audit"]
-    H --> J["Machine-readable report + manifests"]
-    I --> J
-```
+| Training condition | Peer mean | Coordinate median | Trimmed mean |
+|---|---:|---:|---:|
+| IID real rows | 0.758 | 0.758 | 0.758 |
+| Non-IID, scarce real rows | 0.720 | 0.667 | 0.678 |
+| Non-IID, scarce + local synthetic rows | 0.729 | 0.667 | 0.683 |
+| Sign-flipped updates | 0.484 | 0.605 | 0.677 |
+| Poisoned synthetic labels | 0.707 | 0.628 | 0.654 |
 
-There is no server node. The main benchmark uses an all-to-all graph so every peer aggregates the same declared sender set locally; a ring topology is implemented for topology and consensus experiments. Messages contain model deltas and minimal metadata, never raw features or labels.
+- Trimming has a visible trade-off. Under sign-flip, its accuracy falls by 0.006 versus 0.245 for the mean. On the clean synthetic mix, however, it starts 0.046 below the mean. The robust rule helps against this attack at the cost of lower clean-data accuracy in this comparison.
+- Synthetic augmentation gives a small, uneven gain. The mean rises from 0.720 to 0.729, while coordinate median is essentially unchanged. Resampling scarce local rows changes their training weight and adds numeric jitter; it cannot supply missing classes or new source populations.
+- The loss-based membership audit remains close to chance in several conditions: ROC-AUC is 0.532 for scarce real data and 0.535 after augmentation with peer mean. That is a measurement of one attack, not evidence that the synthetic rows protect privacy.
+- Zero disagreement in the all-to-all run follows from common initialization and common messages. The [ring fixture](results/ring-smoke/report.md) has 0.12–0.32 prediction disagreement. It tests local-view behavior on generated data; it is not another Adult benchmark.
 
-## Controlled scenarios
+[Analysis notes](docs/result_analysis.md) explain the update arithmetic and the clean-data/attack trade-off. [Per-run measurements](results/benchmark/benchmark_runs.csv), [round histories](results/benchmark/round_metrics.csv), and the [complete summary](results/benchmark/benchmark_summary.json) retain the values behind the table, including the larger synthetic-mix scenario.
 
-| Scenario | Data condition | Adversarial condition |
-|---|---|---|
-| `iid_real` | IID, real rows | none |
-| `noniid_scarce_real` | Dirichlet label skew; low-data peers retain a configured fraction | none |
-| `noniid_scarce_synthetic` | low-data peers add local non-private bootstrap rows | none |
-| `noniid_sign_flip` | same mixed-data condition | a fixed fraction of peers multiply their outgoing update by a negative scale |
-| `noniid_synthetic_poison` | malicious low-data peers receive label-flipped local synthetic rows | synthetic-supply poisoning |
-| `noniid_synthetic_privacy_audit` | larger local synthetic mix | no Byzantine update; expanded privacy/utility comparison |
+## Run it
 
-The synthetic generator resamples only a peer's local rows and adds bounded jitter to numeric features. It is intentionally simple, explicitly non-DP, and can reproduce characteristics of source rows. It is an experimental treatment, not a privacy mechanism.
-
-## Committed Adult benchmark
-
-The committed full run contains 54 CPU experiments: 6 scenarios × 3 aggregation rules × 3 fixed seeds. Selected means are shown below; the complete table, per-run values, and per-round measurements are in [`results/benchmark`](results/benchmark).
-
-| Scenario | Aggregator | Ensemble balanced accuracy | Worst-peer holdout balanced accuracy | MIA ROC-AUC | Accuracy drop from clean synthetic mix |
-|---|---|---:|---:|---:|---:|
-| IID real | peer mean | 0.758 | 0.735 | 0.485 | n/a |
-| Non-IID scarce real | peer mean | 0.720 | 0.664 | 0.532 | n/a |
-| Non-IID scarce + synthetic | peer mean | 0.729 | 0.689 | 0.535 | reference |
-| Sign-flip | peer mean | 0.484 | 0.175 | 0.406 | 0.245 |
-| Sign-flip | trimmed mean | 0.677 | 0.630 | 0.514 | 0.006 |
-| Synthetic-label poisoning | peer mean | 0.707 | 0.652 | 0.529 | 0.022 |
-
-In this configured run, trimmed mean was substantially less affected than peer mean by the sign-flip attack. Synthetic augmentation modestly improved the peer-mean scarcity result but did not improve every aggregation rule. These are observations from one dataset, topology, model family, attack definition, and three seeds—not general robustness claims. Evaluation-only subgroup TPR gaps also remained non-zero, and the reported MIA values must not be interpreted as a privacy guarantee.
-
-The all-to-all runs converge to identical peer states because every peer starts identically and receives the same synchronous sender set. The committed [`ring-smoke`](results/ring-smoke) instead produces non-zero parameter distance and 0.12–0.32 prediction disagreement, demonstrating the separate local-view consensus path on an explicitly synthetic fixture.
-
-## Data and split boundary
-
-The official UCI archive is pinned in [`data/source_lock.json`](data/source_lock.json) by DOI, source URL, CC BY 4.0 licence, archive path, required members, and SHA-256. The loader rejects any other byte sequence.
-
-The original UCI training file forms the only client-partition pool. The official test file is deterministically divided into three disjoint sets:
-
-1. global utility and subgroup evaluation;
-2. membership-attack calibration nonmembers;
-3. membership-attack evaluation nonmembers.
-
-Each client partition is then split into local train and holdout rows. Source-row IDs are checked across every train, holdout, global-test, attack-calibration, and attack-evaluation boundary. The partition manifest binds both local splits with source-ID hashes and records per-class counts. If a peer holdout contains only one class, the current balanced-accuracy implementation equals that present class's recall rather than a two-class balance; the manifest makes that condition visible. `sex` is excluded from model features and retained only for a two-group TPR-gap diagnostic; that choice does not remove proxy information or establish fairness.
-
-## Reproduce
+Use Python 3.11+ in a virtual environment. The pinned Adult archive is included under `data/raw/`.
 
 ```bash
-python -m venv .venv
-# Linux/macOS: source .venv/bin/activate
-# Windows: .venv\Scripts\Activate.ps1
 python -m pip install -e .
-
-python -m unittest discover -s tests -v
-dlstress validate-data --root .
-dlstress smoke --root .
-dlstress verify --root . --result-dir results/smoke
-dlstress benchmark --root .
 dlstress verify --root . --result-dir results/benchmark
+dlstress smoke --root . --output-dir results/local/quick-check
+dlstress verify --root . --result-dir results/local/quick-check
 ```
 
-`smoke` uses an explicitly generated fixture and is not an Adult result. `benchmark` requires the pinned `data/raw/adult.zip` and runs 8 peers, 12 rounds, 6 scenarios, 3 aggregators, and 3 fixed experiment seeds on CPU.
+The smoke command uses a generated fixture. To rerun the Adult experiment and tests:
 
-PyTorch floating-point results are not claimed to be byte-identical across platforms or library versions. Configurations, source bytes, source data, partitions, synthetic lineage, per-round measurements, reports, and result artifacts are hash-bound; tests use invariants and explicit numerical tolerances.
-
-## Metrics
-
-- ensemble and mean-peer balanced accuracy and ROC-AUC;
-- mean and worst-peer holdout balanced accuracy;
-- cross-peer prediction disagreement and parameter consensus distance;
-- evaluation-only subgroup TPR gap;
-- clean-to-attack balanced-accuracy change;
-- transmitted tensor payload bytes;
-- loss-based membership ROC-AUC, calibrated-threshold advantage, and TPR at 1% FPR.
-
-Membership calibration and evaluation use disjoint member and nonmember samples. This is one black-box attack family. An AUC near 0.5 does not establish privacy, and an AUC below 0.5 is retained rather than relabelled as a success.
-
-## Repository map
-
-```text
-src/decentralized_stress/  data, protocol, model, attacks, privacy, evaluation, CLI
-configs/                   smoke, test, and full benchmark definitions
-data/raw/                  pinned external UCI archive
-data/generated/            generated partition and synthetic lineage manifests
-results/                   run tables, summaries, reports, and integrity manifests
-tests/                     data-boundary, protocol, aggregation, attack, MIA, and end-to-end tests
-docs/                      methodology, threat model, provenance, privacy limits, decisions
+```bash
+python -m unittest discover -s tests -v
+dlstress benchmark --root . --output-dir results/local/adult-rerun
+dlstress verify --root . --result-dir results/local/adult-rerun
 ```
 
-## Explicit non-claims
+The [configuration](configs/benchmark.json) fixes 12 training rounds, the peer partitions, attack settings, and seeds. Verification checks source/config hashes, dataset bytes, partition and synthetic lineage, and result files. Floating-point metrics may differ slightly across PyTorch/BLAS environments.
 
-Version 0.1 does not implement or claim:
+## Data and scope
 
-- real administrative or confidential data;
-- real organisational boundaries or a networked deployment;
-- secure aggregation, authentication, encryption, Sybil defence, or network-fault handling;
-- a formal Byzantine-fault-tolerance guarantee;
-- differential privacy, reconstruction-attack coverage, or comprehensive privacy evaluation;
-- LLM inference, semantic quorum, or model-diversity consensus;
-- GPU/HPC experience, scalability, or production throughput;
-- fairness certification, GDPR compliance, or a lawful data-space implementation;
-- affiliation with any external research project;
-- state-of-the-art accuracy or external validity beyond this dataset and simulator.
+The [source lock](data/source_lock.json) pins the official UCI archive by SHA-256. The original training file supplies peer train/holdout partitions; the official test file is split into disjoint utility, membership-calibration, and membership-evaluation sets. Source-row IDs are checked for overlap. Per-peer class counts are recorded because a single-class holdout reports that class's recall, not two-class balanced performance. See [data provenance](docs/data_provenance.md).
 
-See [`docs/methodology.md`](docs/methodology.md), [`docs/threat_model.md`](docs/threat_model.md), [`docs/privacy_boundary.md`](docs/privacy_boundary.md), and [`docs/data_provenance.md`](docs/data_provenance.md).
+This is a single-process simulation on a public dataset. The generated peer partitions represent experimental data owners, and the local bootstrap generator is non-private. The results concern this MLP, topology, and attack setup; they do not establish a network deployment, formal Byzantine tolerance, or a privacy guarantee. [Methodology](docs/methodology.md), [threat model](docs/threat_model.md), and [privacy audit](docs/privacy_boundary.md) give the details.
 
-## Dataset citation
-
-Becker, B. and Kohavi, R. (1996). *Adult* [Dataset]. UCI Machine Learning Repository. <https://doi.org/10.24432/C5XW20>.
-
-## License
-
-Repository code is MIT licensed. The Adult archive remains under its separately recorded CC BY 4.0 licence and attribution.
+Code: MIT. Dataset: Becker, B. and Kohavi, R. (1996), *Adult*, UCI Machine Learning Repository, [doi:10.24432/C5XW20](https://doi.org/10.24432/C5XW20), CC BY 4.0.
