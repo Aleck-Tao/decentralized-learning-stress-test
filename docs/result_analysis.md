@@ -18,9 +18,11 @@ With `trim_count = 2`, trimmed mean sorts each coordinate, removes the two large
 
 On the clean synthetic mix, peer mean reaches 0.729 and trimmed mean 0.683. Under sign-flip the ordering reverses: 0.484 versus 0.677. Reporting only the attacked case would hide the starting-point difference.
 
-Label-skewed honest peers can generate different useful update directions. Coordinate trimming has no way to label an extreme value as either a minority-data contribution or a poisoned contribution. This is a plausible mechanism for the clean-data cost; the current run does not log coordinate-by-coordinate rejection identities, so it does not directly attribute the loss to particular peers. That attribution would require an instrumented follow-up.
+Label-skewed honest peers can generate different useful update directions. Coordinate trimming has no way to label an extreme value as either a minority-data contribution or a poisoned contribution. The [instrumented follow-up](../results/aggregation-diagnostics/DIAGNOSTICS.md) now records sender rejection rates, update norms, class proportions, and ambiguous boundary ties under matched clean/sign-flip conditions. Those observations test the rejection pattern; they still cannot directly attribute the accuracy gap to useful minority information without intervening on training or partition structure.
 
 The synthetic generator in [data.py](../src/decentralized_stress/data.py) resamples a scarce peer's own rows and jitters numeric features. It increases repeated exposure to local examples, but it does not add a class absent from that peer. The small gain for peer mean and near-zero gain for coordinate median are therefore compatible with augmentation changing optimization without resolving the underlying label skew.
+
+The follow-up measures a rise from 0.6114 to 0.7303 in tie-averaged rejection for the same senders when their updates are sign-flipped. Other senders fall from 0.4629 to 0.4232; total rejected mass stays at one half by construction. Boundary ambiguity is substantial (about 0.34), and the targeted senders already have larger average update norms in the clean condition. The result supports preferential removal of these attacked coordinates, while leaving the mechanism of the clean-accuracy deficit unresolved. Seed 809 also improves under attack for trimmed mean (0.55100 to 0.58112), unlike the other two seeds; the report preserves this variability.
 
 ## What consensus means in this experiment
 

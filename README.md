@@ -25,6 +25,8 @@ The [Adult benchmark](results/benchmark/report.md) covers six scenarios, three a
 
 [Analysis notes](docs/result_analysis.md) explain the update arithmetic and the clean-data/attack trade-off. [Per-run measurements](results/benchmark/benchmark_runs.csv), [round histories](results/benchmark/round_metrics.csv), and the [complete summary](results/benchmark/benchmark_summary.json) retain the values behind the table, including the larger synthetic-mix scenario.
 
+The [instrumented clean/sign-flip comparison](results/aggregation-diagnostics/DIAGNOSTICS.md) adds sender-level rejection histories for trimmed mean. The same senders' tie-averaged rejection rises from 61.1% when clean to 73.0% after sign-flip. About one third of their coordinate observations involve ambiguous boundary ties, so raw sorting indices alone would overstate sender-specific attribution. The three seeds and all three aggregators remain in the accuracy comparison; diagnostics are checked to leave training states and communication unchanged.
+
 ## Run it
 
 Use Python 3.11+ in a virtual environment. The pinned Adult archive is included under `data/raw/`.

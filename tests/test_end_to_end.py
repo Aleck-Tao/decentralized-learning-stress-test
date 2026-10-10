@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import tempfile
 import unittest
+import torch
 from pathlib import Path
 
 from decentralized_stress.data import make_fixture, partition_clients
@@ -17,6 +18,30 @@ from decentralized_stress.provenance import (
 
 
 class EndToEndTests(unittest.TestCase):
+    def test_diagnostics_do_not_change_models_or_training(self) -> None:
+        bundle = make_fixture(train_rows=320, test_rows=120)
+        partition = partition_clients(bundle.train_pool, 4, seed=19, alpha=0.8,
+                                      scarcity_fraction=0.5, scarce_client_fraction=0.25)
+        arguments = dict(topology=make_topology("all_to_all", 4), aggregator="trimmed_mean",
+                         rounds=2, hidden_dim=8, local_epochs=1, batch_size=64,
+                         learning_rate=0.04, trim_count=1, seed=19,
+                         malicious_peer_ids=(1,), update_attack="sign_flip")
+        original = simulate(partition.train, **arguments)
+        instrumented = simulate(partition.train, **arguments, aggregation_diagnostics=True)
+        self.assertEqual(original.round_records, instrumented.round_records)
+        self.assertEqual(original.communication_bytes, instrumented.communication_bytes)
+        for peer, state in original.states.items():
+            for key, value in state.items():
+                self.assertTrue(torch.equal(value, instrumented.states[peer][key]))
+        self.assertEqual(len(instrumented.diagnostic_records), 2 * 4 * 4)
+        self.assertEqual(original.diagnostic_records, ())
+        for round_index in range(2):
+            for receiver in range(4):
+                rows = [row for row in instrumented.diagnostic_records
+                        if row["round"] == round_index and row["receiver_id"] == receiver]
+                self.assertEqual(sum(row["rejected_coordinates"] for row in rows),
+                                 2 * rows[0]["coordinates"])
+
     def test_peer_training_and_evaluation_run_on_cpu(self) -> None:
         bundle = make_fixture(train_rows=320, test_rows=120)
         partition = partition_clients(

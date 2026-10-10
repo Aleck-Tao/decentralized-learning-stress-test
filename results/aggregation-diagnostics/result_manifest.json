@@ -1,0 +1,52 @@
+{
+  "result_count": 9,
+  "result_directory": "results/aggregation-diagnostics",
+  "results": [
+    {
+      "bytes": 2224,
+      "path": "results/aggregation-diagnostics/DIAGNOSTICS.md",
+      "sha256": "f8f192acfe3d0824b90a347db82fefabcc3fffdb2eaf3a5f9fb33e7d4e1a4edd"
+    },
+    {
+      "bytes": 808121,
+      "path": "results/aggregation-diagnostics/aggregation_diagnostics.csv",
+      "sha256": "ed5a3198ad248c64f3ce70bb3fc0942308471152e026c5f40393644e4c727df3"
+    },
+    {
+      "bytes": 6529,
+      "path": "results/aggregation-diagnostics/benchmark_runs.csv",
+      "sha256": "198ef3c8fe2ff86e5c2d9f02384893ff0e75d4de1a369088b9367085a82604d0"
+    },
+    {
+      "bytes": 4001,
+      "path": "results/aggregation-diagnostics/benchmark_summary.json",
+      "sha256": "275dcb59d2a23de1b150eba9e72ace332d7d798a2236d1a42f1395faabcbad57"
+    },
+    {
+      "bytes": 3008,
+      "path": "results/aggregation-diagnostics/diagnostic_summary.json",
+      "sha256": "715bcc95559db436388473485a1baae0734ecba2a32d8cddb9525920279105df"
+    },
+    {
+      "bytes": 5668,
+      "path": "results/aggregation-diagnostics/per_sender_diagnostics.csv",
+      "sha256": "6ac0ec5064250b8918309399282bd5ba3977eda76664ce8ac2933adc5bcbfdeb"
+    },
+    {
+      "bytes": 1365,
+      "path": "results/aggregation-diagnostics/report.md",
+      "sha256": "c960e2f0dd2fc8ebeebe35c2e6232c2ebd480686a67975cbc485936030611498"
+    },
+    {
+      "bytes": 26596,
+      "path": "results/aggregation-diagnostics/round_metrics.csv",
+      "sha256": "8155e163beb635c48592985f589bbe8e5e47d068840853166533fd1c3bc31d0d"
+    },
+    {
+      "bytes": 4785,
+      "path": "results/aggregation-diagnostics/run_manifest.json",
+      "sha256": "5cc74a4db570e3013851277a46d6eb462a102bd49afbb3ec5f1bdce92ca6335f"
+    }
+  ],
+  "schema_version": "1.0"
+}

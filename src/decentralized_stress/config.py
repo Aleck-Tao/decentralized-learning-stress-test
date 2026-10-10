@@ -39,6 +39,7 @@ class BenchmarkConfig:
     seeds: tuple[int, ...]
     aggregators: tuple[str, ...]
     scenarios: tuple[str, ...]
+    aggregation_diagnostics: bool = False
 
     @property
     def byzantine_peer_count(self) -> int:
@@ -82,11 +83,14 @@ class BenchmarkConfig:
             seeds=tuple(int(value) for value in raw["seeds"]),
             aggregators=tuple(str(value) for value in raw["aggregators"]),
             scenarios=tuple(str(value) for value in raw["scenarios"]),
+            aggregation_diagnostics=raw.get("aggregation_diagnostics", False),
         )
         config.validate()
         return config
 
     def validate(self) -> None:
+        if type(self.aggregation_diagnostics) is not bool:
+            raise ValueError("aggregation_diagnostics must be boolean")
         if self.dataset not in {"adult", "fixture"}:
             raise ValueError("dataset must be adult or fixture")
         if self.clients < 3:

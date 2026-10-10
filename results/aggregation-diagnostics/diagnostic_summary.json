@@ -1,0 +1,101 @@
+{
+  "paired_accuracy": [
+    {
+      "aggregator": "coordinate_median",
+      "attack_minus_clean": -0.04065706000000002,
+      "attacked_balanced_accuracy": 0.69756946,
+      "clean_balanced_accuracy": 0.73822652,
+      "seed": 101
+    },
+    {
+      "aggregator": "coordinate_median",
+      "attack_minus_clean": -0.14668568999999998,
+      "attacked_balanced_accuracy": 0.61523276,
+      "clean_balanced_accuracy": 0.76191845,
+      "seed": 307
+    },
+    {
+      "aggregator": "coordinate_median",
+      "attack_minus_clean": 0.0010885899999999449,
+      "attacked_balanced_accuracy": 0.50112247,
+      "clean_balanced_accuracy": 0.50003388,
+      "seed": 809
+    },
+    {
+      "aggregator": "peer_mean",
+      "attack_minus_clean": -0.26660185000000003,
+      "attacked_balanced_accuracy": 0.5,
+      "clean_balanced_accuracy": 0.76660185,
+      "seed": 101
+    },
+    {
+      "aggregator": "peer_mean",
+      "attack_minus_clean": -0.26390722,
+      "attacked_balanced_accuracy": 0.5,
+      "clean_balanced_accuracy": 0.76390722,
+      "seed": 307
+    },
+    {
+      "aggregator": "peer_mean",
+      "attack_minus_clean": -0.20590775000000006,
+      "attacked_balanced_accuracy": 0.45064065,
+      "clean_balanced_accuracy": 0.6565484,
+      "seed": 809
+    },
+    {
+      "aggregator": "trimmed_mean",
+      "attack_minus_clean": -0.017534169999999905,
+      "attacked_balanced_accuracy": 0.7190218,
+      "clean_balanced_accuracy": 0.73655597,
+      "seed": 101
+    },
+    {
+      "aggregator": "trimmed_mean",
+      "attack_minus_clean": -0.03033324999999998,
+      "attacked_balanced_accuracy": 0.72997997,
+      "clean_balanced_accuracy": 0.76031322,
+      "seed": 307
+    },
+    {
+      "aggregator": "trimmed_mean",
+      "attack_minus_clean": 0.030116910000000052,
+      "attacked_balanced_accuracy": 0.58112131,
+      "clean_balanced_accuracy": 0.5510044,
+      "seed": 809
+    }
+  ],
+  "sender_role_summary": [
+    {
+      "ambiguous_boundary_rate": 0.3444574551131928,
+      "role": "other_sender",
+      "scenario": "noniid_scarce_synthetic",
+      "seed_count": 3,
+      "tie_averaged_rejection_rate": 0.46285452351324197,
+      "update_l2_norm_mean": 0.045414397268518515
+    },
+    {
+      "ambiguous_boundary_rate": 0.3377244340359094,
+      "role": "targeted_sender",
+      "scenario": "noniid_scarce_synthetic",
+      "seed_count": 3,
+      "tie_averaged_rejection_rate": 0.6114364294595152,
+      "update_l2_norm_mean": 0.07154568083333333
+    },
+    {
+      "ambiguous_boundary_rate": 0.3361595397114523,
+      "role": "other_sender",
+      "scenario": "noniid_sign_flip",
+      "seed_count": 3,
+      "tie_averaged_rejection_rate": 0.4232183300358155,
+      "update_l2_norm_mean": 0.044271278981481484
+    },
+    {
+      "ambiguous_boundary_rate": 0.3353174603174603,
+      "role": "targeted_sender",
+      "scenario": "noniid_sign_flip",
+      "seed_count": 3,
+      "tie_averaged_rejection_rate": 0.7303450098920115,
+      "update_l2_norm_mean": 0.35734555458333334
+    }
+  ]
+}

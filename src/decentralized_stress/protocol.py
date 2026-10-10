@@ -5,7 +5,7 @@ from typing import Mapping
 
 from torch import Tensor
 
-from .aggregation import aggregate_deltas
+from .aggregation import aggregate_deltas, trimming_diagnostics
 from .attacks import sign_flip
 from .data import Records
 from .model import (
@@ -96,6 +96,7 @@ class SimulationResult:
     round_records: tuple[dict[str, object], ...]
     communication_bytes: int
     malicious_peer_ids: tuple[int, ...]
+    diagnostic_records: tuple[dict[str, object], ...] = ()
 
 
 def simulate(
@@ -113,6 +114,7 @@ def simulate(
     malicious_peer_ids: tuple[int, ...] = (),
     update_attack: str | None = None,
     sign_flip_scale: float = 5.0,
+    aggregation_diagnostics: bool = False,
 ) -> SimulationResult:
     topology.validate()
     if set(train_records) != set(topology.peer_ids):
@@ -131,6 +133,7 @@ def simulate(
     initial = make_initial_state(next(iter(feature_counts)), hidden_dim, seed + 77_777)
     states = {peer_id: clone_state(initial) for peer_id in topology.peer_ids}
     records: list[dict[str, object]] = []
+    diagnostic_records: list[dict[str, object]] = []
     communication_total = 0
     for round_index in range(rounds):
         messages: dict[int, PeerMessage] = {}
@@ -165,6 +168,19 @@ def simulate(
             aggregate = aggregate_deltas(
                 [message.delta for message in received], aggregator, trim_count=trim_count
             )
+            if aggregation_diagnostics and aggregator == "trimmed_mean":
+                diagnostics = trimming_diagnostics(
+                    [message.delta for message in received], trim_count=trim_count)
+                for sender, diagnostic in zip(sender_ids, diagnostics):
+                    train = train_records[sender]
+                    diagnostic_records.append({
+                        "round": round_index, "receiver_id": receiver, "sender_id": sender,
+                        "attacked": messages[sender].attacked,
+                        "sender_train_rows": len(train),
+                        "sender_positive_fraction": float(train.y.mean()),
+                        "sender_synthetic_rows": int(train.synthetic.sum()),
+                        **diagnostic,
+                    })
             updated_states[receiver] = apply_delta(states[receiver], aggregate)
             round_bytes += sum(messages[sender].payload_bytes for sender in topology.neighbours[receiver])
         states = updated_states
@@ -184,4 +200,5 @@ def simulate(
         round_records=tuple(records),
         communication_bytes=communication_total,
         malicious_peer_ids=malicious,
+        diagnostic_records=tuple(diagnostic_records),
     )

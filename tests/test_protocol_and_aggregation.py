@@ -5,7 +5,7 @@ import unittest
 
 import torch
 
-from decentralized_stress.aggregation import aggregate_deltas
+from decentralized_stress.aggregation import aggregate_deltas, trimming_diagnostics
 from decentralized_stress.attacks import sign_flip
 from decentralized_stress.protocol import PeerMessage, make_topology
 
@@ -15,6 +15,18 @@ def delta(value: float) -> OrderedDict[str, torch.Tensor]:
 
 
 class ProtocolAndAggregationTests(unittest.TestCase):
+    def test_rejection_counts_and_boundary_ties(self) -> None:
+        rows = trimming_diagnostics([delta(v) for v in (1.0, 2.0, 2.0, 2.0)], trim_count=1)
+        self.assertEqual(sum(row["rejected_coordinates"] for row in rows), 2)
+        self.assertEqual(rows[0]["tie_averaged_rejection_rate"], 1.0)
+        for row in rows[1:]:
+            self.assertAlmostEqual(row["tie_averaged_rejection_rate"], 1.0 / 3.0)
+            self.assertEqual(row["ambiguous_boundary_coordinates"], 1)
+        self.assertAlmostEqual(sum(row["tie_averaged_rejected_coordinates"] for row in rows), 2.0)
+        untied = trimming_diagnostics([delta(v) for v in (1.0, 2.0, 3.0, 100.0)], trim_count=1)
+        self.assertEqual([row["rejection_rate"] for row in untied], [1.0, 0.0, 0.0, 1.0])
+        self.assertTrue(all(row["ambiguous_boundary_coordinates"] == 0 for row in untied))
+
     def test_all_to_all_and_ring_have_only_peer_nodes(self) -> None:
         all_to_all = make_topology("all_to_all", 8)
         ring = make_topology("ring", 8)

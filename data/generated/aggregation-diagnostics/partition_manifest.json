@@ -1,0 +1,870 @@
+{
+  "partition_count": 6,
+  "partitions": [
+    {
+      "benchmark_seed": 101,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 8,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 27,
+            "1": 52
+          },
+          "holdout_rows": 79,
+          "holdout_source_ids_sha256": "21f6709fc50509033b66ac4617c7798125de6556337b97f147fd507795010384",
+          "peer_id": 0,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 118,
+            "1": 197
+          },
+          "train_rows": 315,
+          "train_source_ids_sha256": "82ac56957e56bc4f16087308e42fb460366125de4d1ae66edf804235f6cc66d1"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 184,
+            "1": 19
+          },
+          "holdout_rows": 203,
+          "holdout_source_ids_sha256": "31a53c9bb76d33dbcb92eea3aecb75cf166ee8a4de228be8e6c13439b8bd6e63",
+          "peer_id": 1,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 740,
+            "1": 74
+          },
+          "train_rows": 814,
+          "train_source_ids_sha256": "60c3173121bc05a6ee56902f7b013b73ce73b3607cf7d664a7c43e64eb807508"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1023,
+            "1": 322
+          },
+          "holdout_rows": 1345,
+          "holdout_source_ids_sha256": "afaf70c6993c9f3ef72e57a0b2457db47b88899d345995d98d38e4277e6c29b5",
+          "peer_id": 2,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 1055,
+            "1": 289
+          },
+          "train_rows": 1344,
+          "train_source_ids_sha256": "95e23908aa45a37eb44df9bc867e1349180725e76780c130af67c2a564398dcc"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 24,
+            "1": 59
+          },
+          "holdout_rows": 83,
+          "holdout_source_ids_sha256": "9ed9c9cc36b6a4ee265ab2286840b9bd838df1c130632791142533b4f3c4083b",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 109,
+            "1": 223
+          },
+          "train_rows": 332,
+          "train_source_ids_sha256": "11fa8cd1f36e015870529ddcd2fd14cbb71f1d5f56a79f6d08630e79b30c46d8"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 3,
+            "1": 120
+          },
+          "holdout_rows": 123,
+          "holdout_source_ids_sha256": "9f6a4b69ce7a03c6ff9f781ea0c936bd5acc8c6efeb1945d358bf83fd35d33a9",
+          "peer_id": 4,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 8,
+            "1": 115
+          },
+          "train_rows": 123,
+          "train_source_ids_sha256": "6d33ded30d64e78811f8cc7fd233a690b214160b6ece8158a59f2637504cfff2"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 393,
+            "1": 431
+          },
+          "holdout_rows": 824,
+          "holdout_source_ids_sha256": "7be0090f56b1cc5ea73237053599b25a8d026075eb2d9feca3fd64f29ba8e40c",
+          "peer_id": 5,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 1508,
+            "1": 1786
+          },
+          "train_rows": 3294,
+          "train_source_ids_sha256": "09e5062bdeec00b52e1290e1cc1c4a963562487f6f2c298c82c06e533449504b"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1703,
+            "1": 551
+          },
+          "holdout_rows": 2254,
+          "holdout_source_ids_sha256": "b21129b519faa2b8933818eb3314ba2811ca9ebac32e287004aa8829cd04e753",
+          "peer_id": 6,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 6833,
+            "1": 2181
+          },
+          "train_rows": 9014,
+          "train_source_ids_sha256": "7e251eb41252448d10d981992c4c5b39bbd321378aaa2083fd29b46e6150b33d"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1580,
+            "1": 22
+          },
+          "holdout_rows": 1602,
+          "holdout_source_ids_sha256": "f7e0d49b1f2c10fcdf5733211056b44832e91e7fffbfb7eff2919ab18e95e943",
+          "peer_id": 7,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 6286,
+            "1": 122
+          },
+          "train_rows": 6408,
+          "train_source_ids_sha256": "f7f4b71dc92c1d8386552ae3b421231c35023eee39a61b139d859bc26bed6515"
+        }
+      ],
+      "dirichlet_alpha": 0.3,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        2,
+        4
+      ],
+      "scarcity_fraction": 0.25,
+      "scenario": "noniid_scarce_synthetic",
+      "seed": 101
+    },
+    {
+      "benchmark_seed": 101,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 8,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 27,
+            "1": 52
+          },
+          "holdout_rows": 79,
+          "holdout_source_ids_sha256": "21f6709fc50509033b66ac4617c7798125de6556337b97f147fd507795010384",
+          "peer_id": 0,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 118,
+            "1": 197
+          },
+          "train_rows": 315,
+          "train_source_ids_sha256": "82ac56957e56bc4f16087308e42fb460366125de4d1ae66edf804235f6cc66d1"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 184,
+            "1": 19
+          },
+          "holdout_rows": 203,
+          "holdout_source_ids_sha256": "31a53c9bb76d33dbcb92eea3aecb75cf166ee8a4de228be8e6c13439b8bd6e63",
+          "peer_id": 1,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 740,
+            "1": 74
+          },
+          "train_rows": 814,
+          "train_source_ids_sha256": "60c3173121bc05a6ee56902f7b013b73ce73b3607cf7d664a7c43e64eb807508"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1023,
+            "1": 322
+          },
+          "holdout_rows": 1345,
+          "holdout_source_ids_sha256": "afaf70c6993c9f3ef72e57a0b2457db47b88899d345995d98d38e4277e6c29b5",
+          "peer_id": 2,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 1055,
+            "1": 289
+          },
+          "train_rows": 1344,
+          "train_source_ids_sha256": "95e23908aa45a37eb44df9bc867e1349180725e76780c130af67c2a564398dcc"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 24,
+            "1": 59
+          },
+          "holdout_rows": 83,
+          "holdout_source_ids_sha256": "9ed9c9cc36b6a4ee265ab2286840b9bd838df1c130632791142533b4f3c4083b",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 109,
+            "1": 223
+          },
+          "train_rows": 332,
+          "train_source_ids_sha256": "11fa8cd1f36e015870529ddcd2fd14cbb71f1d5f56a79f6d08630e79b30c46d8"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 3,
+            "1": 120
+          },
+          "holdout_rows": 123,
+          "holdout_source_ids_sha256": "9f6a4b69ce7a03c6ff9f781ea0c936bd5acc8c6efeb1945d358bf83fd35d33a9",
+          "peer_id": 4,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 8,
+            "1": 115
+          },
+          "train_rows": 123,
+          "train_source_ids_sha256": "6d33ded30d64e78811f8cc7fd233a690b214160b6ece8158a59f2637504cfff2"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 393,
+            "1": 431
+          },
+          "holdout_rows": 824,
+          "holdout_source_ids_sha256": "7be0090f56b1cc5ea73237053599b25a8d026075eb2d9feca3fd64f29ba8e40c",
+          "peer_id": 5,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 1508,
+            "1": 1786
+          },
+          "train_rows": 3294,
+          "train_source_ids_sha256": "09e5062bdeec00b52e1290e1cc1c4a963562487f6f2c298c82c06e533449504b"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1703,
+            "1": 551
+          },
+          "holdout_rows": 2254,
+          "holdout_source_ids_sha256": "b21129b519faa2b8933818eb3314ba2811ca9ebac32e287004aa8829cd04e753",
+          "peer_id": 6,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 6833,
+            "1": 2181
+          },
+          "train_rows": 9014,
+          "train_source_ids_sha256": "7e251eb41252448d10d981992c4c5b39bbd321378aaa2083fd29b46e6150b33d"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1580,
+            "1": 22
+          },
+          "holdout_rows": 1602,
+          "holdout_source_ids_sha256": "f7e0d49b1f2c10fcdf5733211056b44832e91e7fffbfb7eff2919ab18e95e943",
+          "peer_id": 7,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 6286,
+            "1": 122
+          },
+          "train_rows": 6408,
+          "train_source_ids_sha256": "f7f4b71dc92c1d8386552ae3b421231c35023eee39a61b139d859bc26bed6515"
+        }
+      ],
+      "dirichlet_alpha": 0.3,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        2,
+        4
+      ],
+      "scarcity_fraction": 0.25,
+      "scenario": "noniid_sign_flip",
+      "seed": 101
+    },
+    {
+      "benchmark_seed": 307,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 8,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 1,
+            "1": 15
+          },
+          "holdout_rows": 16,
+          "holdout_source_ids_sha256": "435cf1052dc5a00ff9065c0d0be8cd61cdf848c19c43a3dda8d20977ffc68e67",
+          "peer_id": 0,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 18,
+            "1": 46
+          },
+          "train_rows": 64,
+          "train_source_ids_sha256": "944348df47657a65a879052d8d94b45f6cc50d9bd2c000187eff2b5f8dbde9ea"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 185
+          },
+          "holdout_rows": 185,
+          "holdout_source_ids_sha256": "59f2f3e0bc15f77a4cf7c33576b4ccb97217a5754e459dbbc783c07bbfc96871",
+          "peer_id": 1,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 0,
+            "1": 185
+          },
+          "train_rows": 185,
+          "train_source_ids_sha256": "b1c99cdac59c3a3030f18b44ab8986c895d4e7b27c5e60065c70379b9dbf7cd6"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 527,
+            "1": 519
+          },
+          "holdout_rows": 1046,
+          "holdout_source_ids_sha256": "7379f27bd6cf117d875864b7135477f8d6b8c26043f559af308a8860d7ad05fe",
+          "peer_id": 2,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 2117,
+            "1": 2066
+          },
+          "train_rows": 4183,
+          "train_source_ids_sha256": "a6832741117638ebfe9920be48978e059445cefe98b96de10f7dbace5d7974b4"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1638,
+            "1": 107
+          },
+          "holdout_rows": 1745,
+          "holdout_source_ids_sha256": "92210ab0a3e324a85a8a44765b0bd93141667d7efc9a441cc56bf7c3aad9f341",
+          "peer_id": 3,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 1617,
+            "1": 127
+          },
+          "train_rows": 1744,
+          "train_source_ids_sha256": "67c0484fee69e3e196cc7554e35983773209f70a4d367b7ba81ae25c659fac36"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 12,
+            "1": 40
+          },
+          "holdout_rows": 52,
+          "holdout_source_ids_sha256": "e21b77d3d4e1e65c6990e134216c528673c2b0dfe6b4505e2645c943ee91c012",
+          "peer_id": 4,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 83,
+            "1": 123
+          },
+          "train_rows": 206,
+          "train_source_ids_sha256": "96d71eefb96ef5f19f4ca28d6ab8fbfb7eafc715034e7a9da35d09771313aa7f"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 209,
+            "1": 537
+          },
+          "holdout_rows": 746,
+          "holdout_source_ids_sha256": "73fbc287eb3889e23c3b3566bee7f1fcaa02391d9ac686ea79afa6588ae7d0f7",
+          "peer_id": 5,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 791,
+            "1": 2195
+          },
+          "train_rows": 2986,
+          "train_source_ids_sha256": "7df2ee1293d84f5ffeb9ef0a8211450e5d62176ef38109058a6079072da24157"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 718,
+            "1": 26
+          },
+          "holdout_rows": 744,
+          "holdout_source_ids_sha256": "b91bf3787ba1b429963c387a5e60b45946f2ad2e869699c65480b301165fa410",
+          "peer_id": 6,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 2886,
+            "1": 92
+          },
+          "train_rows": 2978,
+          "train_source_ids_sha256": "cd693569e3b2c50e5e1c2818657a575e086d0ae13e75edfbc5b3c17cda4f79c1"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1856,
+            "1": 122
+          },
+          "holdout_rows": 1978,
+          "holdout_source_ids_sha256": "baceffb13f19ae7f57fe77544e6b97ecb38b226200f0503f397304b1922d4b81",
+          "peer_id": 7,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 7369,
+            "1": 544
+          },
+          "train_rows": 7913,
+          "train_source_ids_sha256": "f961ed5d95cd673d5cec3b5ed786ea413936294c0a8876e7001e4ef992f97147"
+        }
+      ],
+      "dirichlet_alpha": 0.3,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        1,
+        3
+      ],
+      "scarcity_fraction": 0.25,
+      "scenario": "noniid_scarce_synthetic",
+      "seed": 307
+    },
+    {
+      "benchmark_seed": 307,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 8,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 1,
+            "1": 15
+          },
+          "holdout_rows": 16,
+          "holdout_source_ids_sha256": "435cf1052dc5a00ff9065c0d0be8cd61cdf848c19c43a3dda8d20977ffc68e67",
+          "peer_id": 0,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 18,
+            "1": 46
+          },
+          "train_rows": 64,
+          "train_source_ids_sha256": "944348df47657a65a879052d8d94b45f6cc50d9bd2c000187eff2b5f8dbde9ea"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 185
+          },
+          "holdout_rows": 185,
+          "holdout_source_ids_sha256": "59f2f3e0bc15f77a4cf7c33576b4ccb97217a5754e459dbbc783c07bbfc96871",
+          "peer_id": 1,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 0,
+            "1": 185
+          },
+          "train_rows": 185,
+          "train_source_ids_sha256": "b1c99cdac59c3a3030f18b44ab8986c895d4e7b27c5e60065c70379b9dbf7cd6"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 527,
+            "1": 519
+          },
+          "holdout_rows": 1046,
+          "holdout_source_ids_sha256": "7379f27bd6cf117d875864b7135477f8d6b8c26043f559af308a8860d7ad05fe",
+          "peer_id": 2,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 2117,
+            "1": 2066
+          },
+          "train_rows": 4183,
+          "train_source_ids_sha256": "a6832741117638ebfe9920be48978e059445cefe98b96de10f7dbace5d7974b4"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1638,
+            "1": 107
+          },
+          "holdout_rows": 1745,
+          "holdout_source_ids_sha256": "92210ab0a3e324a85a8a44765b0bd93141667d7efc9a441cc56bf7c3aad9f341",
+          "peer_id": 3,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 1617,
+            "1": 127
+          },
+          "train_rows": 1744,
+          "train_source_ids_sha256": "67c0484fee69e3e196cc7554e35983773209f70a4d367b7ba81ae25c659fac36"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 12,
+            "1": 40
+          },
+          "holdout_rows": 52,
+          "holdout_source_ids_sha256": "e21b77d3d4e1e65c6990e134216c528673c2b0dfe6b4505e2645c943ee91c012",
+          "peer_id": 4,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 83,
+            "1": 123
+          },
+          "train_rows": 206,
+          "train_source_ids_sha256": "96d71eefb96ef5f19f4ca28d6ab8fbfb7eafc715034e7a9da35d09771313aa7f"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 209,
+            "1": 537
+          },
+          "holdout_rows": 746,
+          "holdout_source_ids_sha256": "73fbc287eb3889e23c3b3566bee7f1fcaa02391d9ac686ea79afa6588ae7d0f7",
+          "peer_id": 5,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 791,
+            "1": 2195
+          },
+          "train_rows": 2986,
+          "train_source_ids_sha256": "7df2ee1293d84f5ffeb9ef0a8211450e5d62176ef38109058a6079072da24157"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 718,
+            "1": 26
+          },
+          "holdout_rows": 744,
+          "holdout_source_ids_sha256": "b91bf3787ba1b429963c387a5e60b45946f2ad2e869699c65480b301165fa410",
+          "peer_id": 6,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 2886,
+            "1": 92
+          },
+          "train_rows": 2978,
+          "train_source_ids_sha256": "cd693569e3b2c50e5e1c2818657a575e086d0ae13e75edfbc5b3c17cda4f79c1"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1856,
+            "1": 122
+          },
+          "holdout_rows": 1978,
+          "holdout_source_ids_sha256": "baceffb13f19ae7f57fe77544e6b97ecb38b226200f0503f397304b1922d4b81",
+          "peer_id": 7,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 7369,
+            "1": 544
+          },
+          "train_rows": 7913,
+          "train_source_ids_sha256": "f961ed5d95cd673d5cec3b5ed786ea413936294c0a8876e7001e4ef992f97147"
+        }
+      ],
+      "dirichlet_alpha": 0.3,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        1,
+        3
+      ],
+      "scarcity_fraction": 0.25,
+      "scenario": "noniid_sign_flip",
+      "seed": 307
+    },
+    {
+      "benchmark_seed": 809,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 8,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 256,
+            "1": 72
+          },
+          "holdout_rows": 328,
+          "holdout_source_ids_sha256": "9f94f19f36e587f00bbe0ff362ef393ef42b6da62511751d07dd569622e2017f",
+          "peer_id": 0,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 255,
+            "1": 73
+          },
+          "train_rows": 328,
+          "train_source_ids_sha256": "c880bed8fa0cf235247f33fda1598a2bba65c73af9749d92bfb393561d1510c5"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 2272,
+            "1": 4
+          },
+          "holdout_rows": 2276,
+          "holdout_source_ids_sha256": "e56aaae577b3cce5bbd6d6c5ebd78a392928bbadde40f7402a49af7799786ab7",
+          "peer_id": 1,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 2274,
+            "1": 2
+          },
+          "train_rows": 2276,
+          "train_source_ids_sha256": "abf6bf610a9e15a2221e0d87f085298767419d6a348b9085a28377a32f6fbe98"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 743,
+            "1": 334
+          },
+          "holdout_rows": 1077,
+          "holdout_source_ids_sha256": "4714144e1f7e8c0bd66de9c39c69e86ec7314722f9e765fdaf7906d73845408a",
+          "peer_id": 2,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 3064,
+            "1": 1242
+          },
+          "train_rows": 4306,
+          "train_source_ids_sha256": "fdbcd4bf9d2589701014785ff9493e24f65bac99287cebbd67c496e41b17fa7a"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1372,
+            "1": 511
+          },
+          "holdout_rows": 1883,
+          "holdout_source_ids_sha256": "8030860c31ab309d56bd676ef3aa5081b48ab11ab706561892f3ba05d2da23d7",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 5321,
+            "1": 2212
+          },
+          "train_rows": 7533,
+          "train_source_ids_sha256": "149e767f61604343480ed65b56aa047b7a681ca325d4a0a0ceeb2c454c2c1dfe"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 5,
+            "1": 531
+          },
+          "holdout_rows": 536,
+          "holdout_source_ids_sha256": "6b21025e223c8e83984c160314b614b3b1a4e721166be8be2d5fae1df4079b15",
+          "peer_id": 4,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 14,
+            "1": 2131
+          },
+          "train_rows": 2145,
+          "train_source_ids_sha256": "ddc78c360b05ce7c8b424b49a767f1d2231fbf2663da6732473b370e9bf3d6c6"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 237,
+            "1": 1
+          },
+          "holdout_rows": 238,
+          "holdout_source_ids_sha256": "a1e342e0e2371cd7720f67e6cb94cf350089df952e6f123ef74625fe84e5e694",
+          "peer_id": 5,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 949,
+            "1": 2
+          },
+          "train_rows": 951,
+          "train_source_ids_sha256": "e6738c47e6ab587a544bc773fd366640adaeedd6ca6d39e05b10ca79f98d6eb0"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 83
+          },
+          "holdout_rows": 83,
+          "holdout_source_ids_sha256": "03ddafea7290801a7ca706a18f499af8243586943fc4cfb195e603fed93b428e",
+          "peer_id": 6,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 330
+          },
+          "train_rows": 330,
+          "train_source_ids_sha256": "0f696222c44d966ec8e607f050e1855fefffd91689cc91f6b1806419903e80d5"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 77,
+            "1": 15
+          },
+          "holdout_rows": 92,
+          "holdout_source_ids_sha256": "bba5c841ce844d19dc8970a44cc904ad81bb58edbbe6431f82197ab28e04b7fd",
+          "peer_id": 7,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 297,
+            "1": 71
+          },
+          "train_rows": 368,
+          "train_source_ids_sha256": "e58009cbcc7a68b2bfca1c1f266110e2478529a0aea51c4b115831b1b0ad43df"
+        }
+      ],
+      "dirichlet_alpha": 0.3,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        0,
+        1
+      ],
+      "scarcity_fraction": 0.25,
+      "scenario": "noniid_scarce_synthetic",
+      "seed": 809
+    },
+    {
+      "benchmark_seed": 809,
+      "boundary": "These are simulated peer partitions, not observed organisational boundaries.",
+      "client_count": 8,
+      "clients": [
+        {
+          "holdout_label_counts": {
+            "0": 256,
+            "1": 72
+          },
+          "holdout_rows": 328,
+          "holdout_source_ids_sha256": "9f94f19f36e587f00bbe0ff362ef393ef42b6da62511751d07dd569622e2017f",
+          "peer_id": 0,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 255,
+            "1": 73
+          },
+          "train_rows": 328,
+          "train_source_ids_sha256": "c880bed8fa0cf235247f33fda1598a2bba65c73af9749d92bfb393561d1510c5"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 2272,
+            "1": 4
+          },
+          "holdout_rows": 2276,
+          "holdout_source_ids_sha256": "e56aaae577b3cce5bbd6d6c5ebd78a392928bbadde40f7402a49af7799786ab7",
+          "peer_id": 1,
+          "scarce": true,
+          "train_label_counts": {
+            "0": 2274,
+            "1": 2
+          },
+          "train_rows": 2276,
+          "train_source_ids_sha256": "abf6bf610a9e15a2221e0d87f085298767419d6a348b9085a28377a32f6fbe98"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 743,
+            "1": 334
+          },
+          "holdout_rows": 1077,
+          "holdout_source_ids_sha256": "4714144e1f7e8c0bd66de9c39c69e86ec7314722f9e765fdaf7906d73845408a",
+          "peer_id": 2,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 3064,
+            "1": 1242
+          },
+          "train_rows": 4306,
+          "train_source_ids_sha256": "fdbcd4bf9d2589701014785ff9493e24f65bac99287cebbd67c496e41b17fa7a"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 1372,
+            "1": 511
+          },
+          "holdout_rows": 1883,
+          "holdout_source_ids_sha256": "8030860c31ab309d56bd676ef3aa5081b48ab11ab706561892f3ba05d2da23d7",
+          "peer_id": 3,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 5321,
+            "1": 2212
+          },
+          "train_rows": 7533,
+          "train_source_ids_sha256": "149e767f61604343480ed65b56aa047b7a681ca325d4a0a0ceeb2c454c2c1dfe"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 5,
+            "1": 531
+          },
+          "holdout_rows": 536,
+          "holdout_source_ids_sha256": "6b21025e223c8e83984c160314b614b3b1a4e721166be8be2d5fae1df4079b15",
+          "peer_id": 4,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 14,
+            "1": 2131
+          },
+          "train_rows": 2145,
+          "train_source_ids_sha256": "ddc78c360b05ce7c8b424b49a767f1d2231fbf2663da6732473b370e9bf3d6c6"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 237,
+            "1": 1
+          },
+          "holdout_rows": 238,
+          "holdout_source_ids_sha256": "a1e342e0e2371cd7720f67e6cb94cf350089df952e6f123ef74625fe84e5e694",
+          "peer_id": 5,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 949,
+            "1": 2
+          },
+          "train_rows": 951,
+          "train_source_ids_sha256": "e6738c47e6ab587a544bc773fd366640adaeedd6ca6d39e05b10ca79f98d6eb0"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 0,
+            "1": 83
+          },
+          "holdout_rows": 83,
+          "holdout_source_ids_sha256": "03ddafea7290801a7ca706a18f499af8243586943fc4cfb195e603fed93b428e",
+          "peer_id": 6,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 0,
+            "1": 330
+          },
+          "train_rows": 330,
+          "train_source_ids_sha256": "0f696222c44d966ec8e607f050e1855fefffd91689cc91f6b1806419903e80d5"
+        },
+        {
+          "holdout_label_counts": {
+            "0": 77,
+            "1": 15
+          },
+          "holdout_rows": 92,
+          "holdout_source_ids_sha256": "bba5c841ce844d19dc8970a44cc904ad81bb58edbbe6431f82197ab28e04b7fd",
+          "peer_id": 7,
+          "scarce": false,
+          "train_label_counts": {
+            "0": 297,
+            "1": 71
+          },
+          "train_rows": 368,
+          "train_source_ids_sha256": "e58009cbcc7a68b2bfca1c1f266110e2478529a0aea51c4b115831b1b0ad43df"
+        }
+      ],
+      "dirichlet_alpha": 0.3,
+      "mode": "dirichlet_label_skew",
+      "scarce_peer_ids": [
+        0,
+        1
+      ],
+      "scarcity_fraction": 0.25,
+      "scenario": "noniid_sign_flip",
+      "seed": 809
+    }
+  ],
+  "schema_version": "1.0"
+}

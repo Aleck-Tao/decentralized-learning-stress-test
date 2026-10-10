@@ -23,9 +23,9 @@
       "sha256": "7fc0501598f94265a57c122979c9a5d08f208fb3731142b112467f5eb9e78a2b"
     },
     {
-      "bytes": 4369,
+      "bytes": 4713,
       "path": "results/smoke/run_manifest.json",
-      "sha256": "48a23520bc261b1dffcda15fd4bed6337d3e789265253b9abcbc067a22dc00bd"
+      "sha256": "72a084473fe30e7da3523b4aba90708f6f7708a62ebf7d38c20037d3455a32d1"
     }
   ],
   "schema_version": "1.0"

@@ -169,6 +169,7 @@ def run_benchmark(
     write_json(source_manifest_path, dataset.provenance)
     rows: list[dict[str, Any]] = []
     round_rows: list[dict[str, Any]] = []
+    diagnostic_rows: list[dict[str, Any]] = []
     partition_manifests: list[dict[str, Any]] = []
     synthetic_manifests: list[dict[str, Any]] = []
 
@@ -231,6 +232,7 @@ def run_benchmark(
                     malicious_peer_ids=malicious,
                     update_attack="sign_flip" if scenario == "noniid_sign_flip" else None,
                     sign_flip_scale=config.sign_flip_scale,
+                    aggregation_diagnostics=config.aggregation_diagnostics,
                 )
                 metrics = evaluate_with_privacy(
                     simulation.states,
@@ -266,6 +268,11 @@ def run_benchmark(
                     **metrics,
                 }
                 rows.append(_round_floats(row))
+                for diagnostic in simulation.diagnostic_records:
+                    diagnostic_rows.append(_round_floats({
+                        "run_id": row["run_id"], "scenario": scenario,
+                        "aggregator": aggregator, "seed": seed, **diagnostic,
+                    }))
                 for round_record in simulation.round_records:
                     round_rows.append(
                         _round_floats(
@@ -303,6 +310,10 @@ def run_benchmark(
     )
     write_csv(result_dir / "benchmark_runs.csv", rows)
     write_csv(result_dir / "round_metrics.csv", round_rows)
+    if diagnostic_rows:
+        from .diagnostics import write_diagnostic_analysis
+        write_csv(result_dir / "aggregation_diagnostics.csv", diagnostic_rows)
+        write_diagnostic_analysis(result_dir, diagnostic_rows, rows)
     metadata = {
         "dataset_kind": dataset.provenance["kind"],
         "clients": config.clients,

@@ -7,7 +7,7 @@
     "byteorder": "little",
     "numpy": "2.5.2",
     "platform": "Windows-11-10.0.26200-SP0",
-    "python": "3.12.13",
+    "python": "3.12.14",
     "python_implementation": "CPython",
     "torch": "2.5.1+cpu",
     "torch_device": "cpu",
@@ -38,9 +38,9 @@
       "sha256": "2cdd23d4f5cd6c3b3e4cb690ad16d560637767b9ca5b2a3cf129fcc0a5ebc82b"
     },
     {
-      "bytes": 1942,
+      "bytes": 4343,
       "path": "src/decentralized_stress/aggregation.py",
-      "sha256": "f94fd8a925be3dbdf56d92b4334706d923e401f654b7c67daf57b7756b9b691e"
+      "sha256": "7a0b3396c4da841f14b5d8db725c3ece472f217f9164e694de15e5ed5af570d2"
     },
     {
       "bytes": 493,
@@ -53,14 +53,19 @@
       "sha256": "0cf3da62eb9f4d027bb17ff004e1be99f2dc1cfe01e215178a0ac11a8fb88388"
     },
     {
-      "bytes": 6441,
+      "bytes": 6693,
       "path": "src/decentralized_stress/config.py",
-      "sha256": "2eb1af45f9ff569dc030a759f3acc92427ce78224ebe7bf43cf976ca97737da5"
+      "sha256": "0aa4d4a393b33ac2ac726afa0a00309b3ba131c36a8ba1b5dce042e4f1f5515c"
     },
     {
       "bytes": 18083,
       "path": "src/decentralized_stress/data.py",
       "sha256": "8dc52690020fad1ba4c9713fa18601f866801d1948b7790f80d3f00ef853d129"
+    },
+    {
+      "bytes": 5814,
+      "path": "src/decentralized_stress/diagnostics.py",
+      "sha256": "7c2250a111cd359d0f9464e31ebff8f317f9ff2b09f2a8a8e9eb284247beccb8"
     },
     {
       "bytes": 4405,
@@ -73,9 +78,9 @@
       "sha256": "f4bed10bf908867b653281b5ff806ecdaf80f1183df6f531108b98fa8cd56409"
     },
     {
-      "bytes": 14740,
+      "bytes": 15391,
       "path": "src/decentralized_stress/pipeline.py",
-      "sha256": "3bf3ad45747736024523bc0b6c1c7ba98207ef982dc4a94d4a0f66fe16d991f2"
+      "sha256": "c75f91dfd653493b57b2ddb770fb500e7a3a0ede2e5e3591b1c41c764656da69"
     },
     {
       "bytes": 6979,
@@ -83,9 +88,9 @@
       "sha256": "c2c739a1a8cc2baf0ca1ebcaa7611dd05b084d1f0e79b3ce8bd1c5e3576faf69"
     },
     {
-      "bytes": 6679,
+      "bytes": 7714,
       "path": "src/decentralized_stress/protocol.py",
-      "sha256": "8f34fce4916b14a21b76fd47fca37df4baa0ae6131b34bf56342f60b487f2448"
+      "sha256": "126694bcd96a22112a1cff66c491347710694a2700bf3e9357ae30e062dd57d5"
     },
     {
       "bytes": 6281,
@@ -96,6 +101,11 @@
       "bytes": 2989,
       "path": "src/decentralized_stress/reporting.py",
       "sha256": "4877efe18b61f1a8428cadba62fc04fc8b057d2c35cac61bd7a069780d921a4e"
+    },
+    {
+      "bytes": 586,
+      "path": "configs/aggregation_diagnostics.json",
+      "sha256": "3100126cec563126420e8eae853e6347ec78c9e398f80c0fb2cd05cfd9076c39"
     },
     {
       "bytes": 675,
@@ -118,7 +128,7 @@
       "sha256": "782ddbc050a9d762ccbe0495a91731043cec4c95a4bff0fe472259ae96352c59"
     }
   ],
-  "source_tree_sha256": "2d34e61c546f7d0baab4eaa01a5b91b59c156bff2c18ea47c80d0f448041e9d6",
+  "source_tree_sha256": "29455ed4e66c6451d57c9de4385911bded34f35f1229a726035e1a0a0aa6bd19",
   "synthetic_manifest_path": "data/generated/smoke/synthetic_manifest.json",
   "synthetic_manifest_sha256": "18f7874a58bb95edd43d8e77fb6cbb6d3cc3306c8d94c9ada152bc0d981145a8"
 }

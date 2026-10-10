@@ -23,9 +23,9 @@
       "sha256": "9292a0f775da887d2c576e865f32a410695e331c3e3bdc9e76c9661882f8732e"
     },
     {
-      "bytes": 4389,
+      "bytes": 4733,
       "path": "results/ring-smoke/run_manifest.json",
-      "sha256": "3b7c8c3718a46b509f0c902ddf3cbd436abfba9ab1a304610b7364583ca31e48"
+      "sha256": "fc58b6397422ee980a2e0ec79afbe0e2b0fd96da872c340e46ac56381ae2260e"
     }
   ],
   "schema_version": "1.0"
