@@ -53,7 +53,7 @@ jobs:
       - run: python -m decentralized_stress benchmark --root . --config configs/aggregation_diagnostics.json --output-dir results/ci-aggregation-diagnostics
       - run: python -m decentralized_stress verify --root . --result-dir results/ci-aggregation-diagnostics
       - name: Upload verified CPU benchmark
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: decentralized-learning-cpu-${{ github.sha }}
           path: |
